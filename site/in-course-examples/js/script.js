@@ -127,12 +127,196 @@ a();
 
 
 
-// *** For loop
-var sum = 0;
-for (var i = 0; i < 10; i++) {
-	sum = sum + i;
-}
-console.log("The sum of 0 to 9 is: " + sum);
+// // *** For loop
+// var sum = 0;
+// for (var i = 0; i < 10; i++) {
+// 	sum = sum + i;
+// }
+// console.log("The sum of 0 to 9 is: " + sum);
+
+
+
+
+//////////////////////// lec 44: js default values
+
+
+
+
+// function orderChickenWith (sideDish) {
+// 	// if (sideDish === undefined) {
+// 	// 	sideDish = "rice";
+// 	// }
+// 	sideDish = sideDish || "rice";
+// 	console.log("Chicken with " + sideDish + ".");
+// }
+
+// orderChickenWith("noodles");
+// orderChickenWith();
+
+
+
+
+//////////////////////// lec 45: Creating new objects using
+//////////////////////// 'new Object()' syntax
+
+
+
+
+// First way to create an Object:
+
+// var company = new Object();
+// company.name = "Microsoft";
+// //console.log(company);
+// // the name is 'name', and the value is 'Microsoft'.
+// company.ceo = new Object();
+// company.ceo.firstName = "John";
+// company.ceo.favColor = "black";
+
+// console.log(company);
+// console.log("Company CEO name is: " 
+// 	+ company.ceo.firstName);
+
+// console.log(company["name"]);
+
+// // two ways to declare name value pair in Object.
+// //company.$stock = 100;
+// company["stock of company"] = 110;
+
+// console.log(company);
+// console.log("Stock of company is: " + company["stock of company"]);
+
+
+// Second way to create an Object (better way: object literal):
+
+// var microsoft = {
+// 	// put comma at the end of each name-value pair, not semicolon!!
+// 	name: "Microsoft",
+// 	ceo: {
+// 		firstName: "John",
+// 		favColor: "black" // the last name-value pair in the object
+// 						  // does not have a comma at the end!!
+// 	},  // don't forget to put comma here!!!!!!
+// 	$stock: 110, // no comma at the end indicates that this is the 
+// 				// last name-value pair inside the object.
+// 	"stock of company": 110
+// };
+
+// console.log(microsoft.ceo.firstName);
+
+
+
+
+//////////////////////// lec 46: Function Explained
+
+
+
+
+// // functions in js are called: first-class data type.
+// // that is, whatever you can do to an object, then whatever you can do
+// // to the function.
+
+// // functions are objects!
+
+// function multiply (x, y) {
+// 	return x * y;
+// }
+
+// multiply.version = "v.1.0.0";
+// //console.log(multiply);  // the output is the function code itself.
+// console.log(multiply.version);
+
+
+// // Function factory:
+// function makeMultiplier(multiplier) {
+// 	var myFunc = function (x) {
+// 		return multiplier * x;
+// 	};
+// 	return myFunc;
+// }
+
+// var multiplyBy3 = makeMultiplier(3);
+// // here the variable multiplyBy3 is a reference of the function inside 
+// // makeMultiplier(mutiplier) (which is 'myFunc').
+// console.log(multiplyBy3(10));
+
+// var doubleAll = makeMultiplier(2);
+// console.log(doubleAll(100));
+
+
+// // Passing functions as arguments
+// function doOperationOn(x, operation) {
+// 	return operation(x);
+// }
+// var result = doOperationOn(5, multiplyBy3);
+// console.log(result);
+// result = doOperationOn(100, doubleAll);
+// console.log(result);
+
+
+
+
+//////////////////////// lec 47: Passing variables by values vs reference
+
+
+// ------------ Copy by value vs copy by reference
+
+// var a = 7;
+// var b = a;
+// console.log("a: " + a);
+// console.log("b: " + b);
+
+// b = 5;
+// console.log("After b update: ");
+// console.log("a: " + a);
+// console.log("b: " + b);
+
+//////////
+
+// var a = {x : 7};
+// var b = a;
+// console.log(a);
+// console.log(b);
+
+// b.x = 5;
+// console.log("After b.x update: ");
+// console.log(a);
+// console.log(b);
+
+
+// ------------ Pass by value vs pass by reference
+
+// function changePrimitive(primValue) {
+// 	console.log("In changePrimitive...");
+// 	console.log("before:");
+// 	console.log(primValue);
+
+// 	primValue = 5;
+// 	console.log("after:");
+// 	console.log(primValue);
+// }
+
+// var value = 7;
+// changePrimitive(value); // primValue = value in memory
+// console.log("After changePrimitive, orig value:");
+// console.log(value);
+
+
+// function changeObject(objValue) {
+// 	console.log("In changeObject...");
+// 	console.log("before:");
+// 	console.log(objValue);
+
+// 	objValue.x = 5;
+// 	console.log("after:");
+// 	console.log(objValue);
+// }
+
+// value = {x : 7};
+// changeObject(value); // objValue = value in memory
+// console.log("After changeObject, orig value:");
+// console.log(value);
+
+
 
 
 
