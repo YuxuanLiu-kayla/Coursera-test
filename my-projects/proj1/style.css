@@ -1,4 +1,31 @@
 body {
-	background-color: #06318E;
-	
+	background-color: #000E29;
+	font-family: 'Rowdies', cursive;
+	color: white;
+}
+h1 {
+	font-size: 1000%;
+	text-align: center;
+	margin-top: 0.4em;
+	margin-bottom: 5px;
+	padding: 0px 0px 0px 0px;
+}
+
+div#container {
+	position: relative;
+}
+
+#below-h1 {
+	font-size: 200%;
+	text-align: center;
+	margin-top: 5px;
+}
+
+.subheadings {
+	font-size: 250%;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	margin-right: 0.4em;
+	margin-left: 0.4em;
+	float: left;
 }
