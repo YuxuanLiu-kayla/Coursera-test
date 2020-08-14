@@ -319,6 +319,114 @@ a();
 
 
 
+//////////////////////// lec 48: Function constructor
+
+
+
+
+// // Function constructor
+
+// function Circle(radius) {
+// 	this.radius = radius;
+// }
+// Circle.prototype.getArea = 
+// 	function () {
+// 		return Math.PI * Math.pow(this.radius, 2);
+// 	};
+
+// var myCircle = new Circle(10);  // new Object();
+// console.log(myCircle);
+
+// var myOtherCircle = new Circle(20);
+// console.log(myOtherCircle);
+
+
+
+
+//////////////////////// lec 49: Object literals and the 'this' keyword.
+
+
+
+
+// var literalCircle = { // this is actually a 'new Object();'
+// 	radius: 10,
+
+// 	getArea: function () {
+// 		//console.log(this);  // this points to the object that calls it.
+// 		var self = this;
+
+// 		var increaseRadius = function () {
+// 			self.radius = 20;
+// 		};
+// 		increaseRadius();
+// 		console.log(this.radius);
+
+// 		return Math.PI * Math.pow(this.radius, 2);
+// 	}
+// };
+
+// console.log(literalCircle.getArea());
+
+
+
+
+//////////////////////// lec 50: Arrays
+
+
+
+
+// var array = new Array();
+// array[0] = "Yuxuan";
+// array[1] = 2;
+// array[2] = function (name) {
+// 	console.log("Hello " + name + "!");
+// };
+// array[3] = {course: "HTML, CSS & JS"};
+
+// console.log(array);
+// console.log(array[1]);
+// array[2](array[0]);
+// console.log(array[3].course);
+
+
+// // Short hand array creation
+// var names = ["Yuxuan", "Rui Heng", "Haha", "Jason"];
+// console.log(names);
+
+// for (var i = 0; i < names.length; i++) {
+// 	console.log("Hello " + names[i]);
+// }
+
+// names[100] = "Giulia";
+// for (var i = 0; i < names.length; i++) {
+// 	console.log("Hello " + names[i]);
+// }
+
+
+var names2 = ["Yuxuan", "Rui Heng", "Haha", "Jason"];
+
+// var myObj = {
+// 	name: "Yuxuan",
+// 	course: "HTML, CSS & JS",
+// 	platform: "Coursera"
+// };
+// for (var obj in myObj) {   // objs are names of an object.
+// 	console.log(obj + ": " + myObj[obj]);
+// }
+
+// for (var name in names2) {  // here name is a specific number in the
+// 							// range 0 ~ 3.
+// 	console.log("Hello " + names2[name]);
+// }
+
+names2.greeting = "Hi!";
+
+for (var name in names2) {  // here name is a specific number in the
+							// range 0 ~ 3.
+	console.log("Hello " + names2[name]);
+}
+
+
 
 
 
