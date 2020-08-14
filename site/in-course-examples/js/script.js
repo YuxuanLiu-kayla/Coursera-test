@@ -390,7 +390,7 @@ a();
 
 
 // // Short hand array creation
-// var names = ["Yuxuan", "Rui Heng", "Haha", "Jason"];
+// var names = ["Yuxuan", "Haha", "Jason"];
 // console.log(names);
 
 // for (var i = 0; i < names.length; i++) {
@@ -403,7 +403,7 @@ a();
 // }
 
 
-var names2 = ["Yuxuan", "Rui Heng", "Haha", "Jason"];
+// var names2 = ["Yuxuan", "Haha", "Jason"];
 
 // var myObj = {
 // 	name: "Yuxuan",
@@ -419,12 +419,48 @@ var names2 = ["Yuxuan", "Rui Heng", "Haha", "Jason"];
 // 	console.log("Hello " + names2[name]);
 // }
 
-names2.greeting = "Hi!";
+// names2.greeting = "Hi!";
 
-for (var name in names2) {  // here name is a specific number in the
-							// range 0 ~ 3.
-	console.log("Hello " + names2[name]);
+// for (var name in names2) {  // here name is a specific number in the
+// 							// range 0 ~ 3.
+// 	console.log("Hello " + names2[name]);
+// }
+
+
+
+
+//////////////////////// lec 51: Closures
+
+
+
+
+function makeMultiplier (multiplier) {
+	function b() {
+		console.log("Multiplier is: " + multiplier);
+	}
+	b();
+
+	return (
+		function (x) {
+			return multiplier * x;
+		}
+	);
 }
+
+var doubleAll = makeMultiplier(2);
+console.log(doubleAll(10));  // its own execution environment
+
+
+
+
+//////////////////////// lec 52: Immediatelt Invoked Function Expression
+
+
+
+
+(function (name) {
+	console.log("Hello " + name);
+})("Coursera!");
 
 
 
